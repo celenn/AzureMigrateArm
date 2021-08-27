@@ -5,7 +5,7 @@
     "Organization_Name": {
       "type": "string",
       "metadata": {
-        "displayName": "Enter your organization name",
+        "displayName": "Enter your organization name (e.g. Contoso), must be unique",
         "description": "Organization_Name"
       },
       "defaultValue": ""
@@ -20,7 +20,7 @@
       "allowedValues": [
         "UK South",
         "UK West",
-        "West Europe",
+        "West Europe"
       ]
     }
   },
@@ -133,18 +133,6 @@
         "goal": "Databases",
         "status": "Active",
         "details": null
-      }
-    },
-    {
-      "type": "Microsoft.Migrate/MigrateProjects/providers/locks",
-      "apiVersion": "2016-09-01",
-      "name": "[concat(variables('Azure_Migrate_Name'), '/Microsoft.Authorization/AzureMigrateDoNotDelete')]",
-      "dependsOn": [
-        "MIG-DB-Service"
-      ],
-      "comments": "Resource lock Azure Migrate",
-      "properties": {
-        "level": "CannotDelete"
       }
     }
   ],
