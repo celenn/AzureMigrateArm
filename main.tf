@@ -14,10 +14,12 @@ resource "azurerm_template_deployment" "azure_migrate" {
   name                = var.deployment_name
   resource_group_name = azurerm_resource_group.rg.name
 
-  template_body = file("./templates/ARM-Azure-Migrate.txt")
+  template_body = file("./templates/ARM-Azure-Migrate-v2020.txt")
 
   parameters = {
-    Organization_Name = "bupa"
+    migrateProjectName = "bupa"
+    location = "uksouth"
+
 
   }
 
